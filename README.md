@@ -39,6 +39,7 @@ $docker container exec -ti [id_contenedor] /bin/bash
 b) To change the ip address of the application, you must modify the files:
 
 src/public/js/
+```sh
 app.4b1ed678.js
 app.4b1ed678.js.map
-
+```
