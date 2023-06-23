@@ -13,6 +13,8 @@ git clone https://github.com/MUTUAL-DE-SERVICIOS-AL-POLICIA/SIS-VSALOME.git
 cd SIS-VSALOME
 ```
 
+- Switch to the main branch
+
 - Get the dependencies
 ```npm
 npm install
@@ -31,7 +33,7 @@ docker-compose up -d
 inside mongo container
 
 ```sh
-docker container exec [containter_id] --db salomedb /backup/salomedb[date_backup]
+docker container exec [containter_id] mongorestore --db salomedb /backup/salomedb[date_backup]
 ```
 
 ## Starting the application
