@@ -10,11 +10,13 @@ const app = express();
 //connection
 mongoose.Promise = global.Promise;
 
-const uri = 'mongodb://mongo:27017/salomedb';
+const uri = 'mongodb://mongo:27017/salomedb'; // para contenedor
 
-//const uri = 'mongodb://localhost:27017/salomedb';
-// const uri = "mongodb+srv://alerick:PNfsxUIsoBAjKkis@salomedb.s1hip.mongodb.net/salomedb?retryWrites=true&w=majority";
-//const uri="mongodb+srv://alerick:PNfsxUIsoBAjKkis@salomedb.s1hip.mongodb.net/salomedbtest?retryWrites=true&w=majority";
+// const uri = 'mongodb://localhost:27017/salomedb'; // para desarrollo local
+
+// const uri = "mongodb+srv://alerick:PNfsxUIsoBAjKkis@salomedb.s1hip.mongodb.net/salomedb?retryWrites=true&w=majority"; // producción
+
+//const uri="mongodb+srv://alerick:PNfsxUIsoBAjKkis@salomedb.s1hip.mongodb.net/salomedbtest?retryWrites=true&w=majority"; // pruebas
 
 const options = { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true };
 mongoose.connect(uri, options)

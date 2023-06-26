@@ -10,7 +10,7 @@ export default {
         const response = await tokenService.decode(req.headers.token);
         if (response.role == 'admin' || response.role == 'cobranzas') {
             next();
-        }   else{
+        } else {
             return res.status(403).send({
                 message: 'unauthorized user'
             })
@@ -25,7 +25,7 @@ export default {
         const response = await tokenService.decode(req.headers.token);
         if (response.role == 'admin') {
             next();
-        }   else{
+        } else {
             return res.status(403).send({
                 message: 'unauthorized user'
             })
@@ -40,7 +40,7 @@ export default {
         const response = await tokenService.decode(req.headers.token);
         if (response.role == 'cobranzas') {
             next();
-        }   else{
+        } else {
             return res.status(403).send({
                 message: 'unauthorized user'
             })
