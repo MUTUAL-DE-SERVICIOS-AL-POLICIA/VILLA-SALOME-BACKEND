@@ -54,6 +54,7 @@ export default {
                         balance: 0
 
                     });
+                    res.status(200).json(reg);
                 }
 
             } else {
@@ -71,6 +72,7 @@ export default {
                     glosa: req.body.glosa,
                     balance: parseFloat(parseFloat(last_payment.balance) - parseFloat(req.body.total)).toFixed(2)
                 });
+                res.status(200).json(reg);
             }
         } catch (e) {
             res.status(500).send({
@@ -100,7 +102,7 @@ export default {
     list: async (req, res, next) => {
         try {
             const reg = await models.Payment.find({ "loan": req.query.loan_id })
-                .populate('loan', {});
+                .populate('loan', {}).sort({ date: 1 });
             res.status(200).json(reg);
         } catch (e) {
             res.status(500).send({
